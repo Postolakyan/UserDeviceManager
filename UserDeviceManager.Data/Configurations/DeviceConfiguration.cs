@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UserDeviceManager.Data.Models;
-
-namespace UserDeviceManager.Data.Configurations;
+﻿namespace UserDeviceManager.Data.Configurations;
 
 public class DeviceConfiguration : IEntityTypeConfiguration<Device>
 {

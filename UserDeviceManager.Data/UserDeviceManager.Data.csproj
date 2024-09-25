@@ -19,4 +19,15 @@
     </PackageReference>
   </ItemGroup>
 
+
+	<ItemGroup>
+		<Using Include="Microsoft.EntityFrameworkCore"/>
+		<Using Include="UserDeviceManager.Data.Models"/>
+		<Using Include="UserDeviceManager.Data.Context"/>
+		<Using Include="UserDeviceManager.Data.Repository"/>
+		<Using Include="UserDeviceManager.Data.IRepository"/>
+		<Using Include="UserDeviceManager.Data.Configurations"/>
+		<Using Include="System.ComponentModel.DataAnnotations"/>
+		<Using Include="Microsoft.EntityFrameworkCore.Metadata.Builders"/>
+	</ItemGroup>
 </Project>

@@ -1,7 +1,4 @@
-﻿using Microsoft.Identity.Client;
-using UserDeviceManager.Data.Context;
-using UserDeviceManager.Data.IRepository;
-using UserDeviceManager.Data.Repository;
+﻿using UserDeviceManager.Data.Repository;
 
 namespace UserDeviceManager.Data.UnitOfWork;
 

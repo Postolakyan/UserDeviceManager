@@ -1,6 +1,8 @@
-﻿namespace UserDeviceManager.Data.Models;
+﻿using UserDeviceManager.Data.Models;
 
-public class Device : IEntity
+namespace UserDeviceManager.Business.Models;
+
+public class DeviceDomainMOdel
 {
     public int Id { get; set; }
     public User User { get; set; }

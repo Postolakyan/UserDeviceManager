@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using UserDeviceManager.Data.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace UserDeviceManager.Data.Configurations;
+﻿namespace UserDeviceManager.Data.Configurations;
 
 public class UserConfiguration : IEntityTypeConfiguration<User>
 {

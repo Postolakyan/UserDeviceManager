@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using UserDeviceManager.Data.Configurations;
-using UserDeviceManager.Data.Models;
-
-namespace UserDeviceManager.Data.Context;
+﻿namespace UserDeviceManager.Data.Context;
 
 public class DeviceManagerDbContext : DbContext
 {

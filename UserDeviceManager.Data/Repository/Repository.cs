@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using UserDeviceManager.Data.Context;
-using UserDeviceManager.Data.IRepository;
-
-namespace UserDeviceManager.Data.Repository;
+﻿namespace UserDeviceManager.Data.Repository;
 
 public class Repository<T>(DeviceManagerDbContext context) : IRepository<T> where T : class, IEntity
 {
