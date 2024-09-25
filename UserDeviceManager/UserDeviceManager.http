@@ -1,0 +1,6 @@
+@UserDeviceManager_HostAddress = http://localhost:5119
+
+GET {{UserDeviceManager_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
