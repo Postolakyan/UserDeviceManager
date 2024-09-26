@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using UserDeviceManager.Api.MIddlewares;
-using UserDeviceManager.Business.Interfaces;
 using UserDeviceManager.Business.MappingProfiles;
 using UserDeviceManager.Business.Services;
 using UserDeviceManager.Data.Context;

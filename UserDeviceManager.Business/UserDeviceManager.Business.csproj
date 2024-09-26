@@ -14,4 +14,13 @@
     <ProjectReference Include="..\UserDeviceManager.Data\UserDeviceManager.Data.csproj" />
   </ItemGroup>
 
+	
+	<ItemGroup>
+		<Using Include="AutoMapper"/>
+		<Using Include="Microsoft.EntityFrameworkCore"/>
+		<Using Include="UserDeviceManager.Business.Interfaces"/>
+		<Using Include="UserDeviceManager.Business.Models"/>
+		<Using Include="UserDeviceManager.Data.Interfaces"/>
+		<Using Include="UserDeviceManager.Data.Models"/>
+	</ItemGroup>
 </Project>

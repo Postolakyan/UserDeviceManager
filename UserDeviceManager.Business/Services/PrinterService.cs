@@ -1,7 +1,4 @@
-﻿using System.Reflection;
-using UserDeviceManager.Business.Interfaces;
-using UserDeviceManager.Business.Models;
-using System.Drawing.Printing;
+﻿using IDeviceAction = UserDeviceManager.Business.Interfaces.IDeviceAction;
 
 namespace UserDeviceManager.Business.Services;
 

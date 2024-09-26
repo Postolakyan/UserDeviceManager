@@ -1,11 +1,7 @@
-﻿using UserDeviceManager.Data.Enum;
-using UserDeviceManager.Data.Models;
-
-namespace UserDeviceManager.Api.Models
+﻿namespace UserDeviceManager.Api.Models
 {
-    public class DeviceCreateDto
+    public class DeviceUpdateDto
     {
-        public int Id { get; set; }
         public int UserId { get; set; }
         public string Name { get; set; }
         public string Model { get; set; }

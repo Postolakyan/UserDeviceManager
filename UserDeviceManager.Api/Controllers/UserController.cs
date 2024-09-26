@@ -1,10 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using UserDeviceManager.Api.Models;
-using UserDeviceManager.Business.Interfaces;
-using UserDeviceManager.Business.Models;
-
-namespace UserDeviceManager.Api.Controllers;
+﻿namespace UserDeviceManager.Api.Controllers;
 
 [ApiController]
 [Route("[controller]/[Action]")]

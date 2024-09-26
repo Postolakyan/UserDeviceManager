@@ -1,7 +1,4 @@
-﻿using UserDeviceManager.Data.Enum;
-using UserDeviceManager.Data.Models;
-
-namespace UserDeviceManager.Api.Models;
+﻿namespace UserDeviceManager.Api.Models;
 
 public class DeviceResponseDto
 {

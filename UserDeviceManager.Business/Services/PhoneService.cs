@@ -1,4 +1,4 @@
-﻿using UserDeviceManager.Business.Interfaces;
+﻿using IDeviceAction = UserDeviceManager.Business.Interfaces.IDeviceAction;
 
 namespace UserDeviceManager.Business.Services;
 
