@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.CompilerServices;
 using UserDeviceManager.Api.Models;
 using UserDeviceManager.Business.Interfaces;
 using UserDeviceManager.Business.Models;
+using UserDeviceManager.Business.Services;
 
 namespace UserDeviceManager.Api.Controllers;
 
@@ -76,4 +79,17 @@ public class DeviceController(IDeviceService deviceService, IMapper mapper) : Co
         return NotFound();
     }
     #endregion CRUD
+
+
+    [HttpPost]
+    public async Task<IActionResult> PerformeAction(int id, CancellationToken token)
+    {
+        DeviceDomainModel device = await deviceservice.GetAsync(id, token);
+        if (device is not null)
+        {
+            string result = deviceservice.PerformeAction(device);
+            return Ok(result);
+        }
+        return BadRequest();
+    }
 }

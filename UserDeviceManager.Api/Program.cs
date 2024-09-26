@@ -14,9 +14,13 @@ builder.Services.AddEndpointsApiExplorer();
 string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<DeviceManagerDbContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
-builder.Services.AddScoped<IUserService,UserService>();
-builder.Services.AddScoped<IDeviceService,DeviceService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IDeviceService, DeviceService>();
+
+builder.Services.AddScoped<IPhoneService, PhoneService>();
+builder.Services.AddScoped<ILaptopService, LaptopService>();
+builder.Services.AddScoped<IPrinterService, PrinterService>();
 
 
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);

@@ -3,6 +3,7 @@ using UserDeviceManager.Business.Interfaces;
 using UserDeviceManager.Business.Models;
 using UserDeviceManager.Data.Interfaces;
 using UserDeviceManager.Data.Models;
+using IDeviceAction = UserDeviceManager.Business.Interfaces.IDeviceAction;
 
 namespace UserDeviceManager.Business.Services
 {
@@ -42,6 +43,17 @@ namespace UserDeviceManager.Business.Services
                 return true;
             }
             return false;
+        }
+        public string PerformeAction(DeviceDomainModel deviceDomainModel)
+        {
+            IDeviceAction deviceAction = deviceDomainModel.DeviceType switch
+            {
+                Data.Enum.DeviceType.Printer => new PrinterService(),
+                Data.Enum.DeviceType.Phone => new PhoneService(),
+                Data.Enum.DeviceType.Laptop => new LaptopService(),
+                _ => throw new ArgumentException("Unknown device type.")
+            };
+            return deviceAction.PerformeAction();
         }
         #endregion CRUD
     }
