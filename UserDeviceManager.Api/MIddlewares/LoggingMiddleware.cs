@@ -16,7 +16,6 @@ public class LoggingMiddleware
         }
     }
 
-
     public async Task InvokeAsync(HttpContext context)
     {
         var originalBodyStream = context.Response.Body;

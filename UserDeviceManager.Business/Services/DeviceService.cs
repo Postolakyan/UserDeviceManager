@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using UserDeviceManager.Business.Interfaces;
 using UserDeviceManager.Business.Models;
 using UserDeviceManager.Data.Interfaces;
@@ -21,11 +22,13 @@ public class DeviceService(IUnitOfWork unit, IMapper mapper) : IDeviceService
     }
     public async Task<DeviceDomainModel> GetAsync(int id, CancellationToken token)
     {
-        return mapper.Map<DeviceDomainModel>(await unit.DeviceRepository.GetByIdAsync(id, token));
+        return mapper.Map<DeviceDomainModel>(await unit.DeviceRepository.GetAllAsync(token)
+            .Include(device => device.User)
+            .FirstOrDefaultAsync(device => device.Id == id));
     }
     public async Task<IEnumerable<DeviceDomainModel>> GetAllAsync(CancellationToken token)
     {
-        IEnumerable<Device> models = await unit.DeviceRepository.GetAllAsync(token);
+        IEnumerable<Device> models = await unit.DeviceRepository.GetAllAsync(token).Include(d => d.User).ToListAsync(token);
         IEnumerable<DeviceDomainModel> newmodels = models.Select(e => mapper.Map<DeviceDomainModel>(e));
         return newmodels;
     }
