@@ -1,13 +1,11 @@
 ﻿using UserDeviceManager.Data.Enum;
-using UserDeviceManager.Data.Models;
 
-namespace UserDeviceManager.Business.Models;
+namespace UserDeviceManager.Api.Models;
 
-public class DeviceDomainModel
+public class DeviceResponseDto
 {
     public int Id { get; set; }
     public int UserId { get; set; }
-    public User User { get; set; }
     public string Name { get; set; }
     public string Model { get; set; }
     public string Description { get; set; }

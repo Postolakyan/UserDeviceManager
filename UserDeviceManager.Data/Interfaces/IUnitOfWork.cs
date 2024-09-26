@@ -1,4 +1,4 @@
-﻿namespace UserDeviceManager.Data.UnitOfWork;
+﻿namespace UserDeviceManager.Data.Interfaces;
 public interface IUnitOfWork
 {
     Task Save(CancellationToken token);

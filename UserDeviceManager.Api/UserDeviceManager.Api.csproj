@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\UserDeviceManager.Business\UserDeviceManager.Business.csproj" />
   </ItemGroup>
 

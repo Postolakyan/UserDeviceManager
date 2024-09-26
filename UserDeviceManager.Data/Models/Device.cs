@@ -1,4 +1,6 @@
-﻿namespace UserDeviceManager.Data.Models;
+﻿using UserDeviceManager.Data.Enum;
+
+namespace UserDeviceManager.Data.Models;
 
 public class Device : IEntity
 {
@@ -9,4 +11,6 @@ public class Device : IEntity
     public string Model { get; set; }
     public string Description { get; set; }
     public string SerialNumber { get; set; }
+    public DeviceType DeviceType { get; set; }
+   
 }

@@ -1,4 +1,5 @@
-﻿using UserDeviceManager.Data.Repository;
+﻿using UserDeviceManager.Data.Interfaces;
+using UserDeviceManager.Data.Repository;
 
 namespace UserDeviceManager.Data.UnitOfWork;
 
