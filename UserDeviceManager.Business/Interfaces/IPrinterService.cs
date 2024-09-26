@@ -1,7 +1,6 @@
-﻿namespace UserDeviceManager.Business.Interfaces
+﻿namespace UserDeviceManager.Business.Interfaces;
+
+public interface IPrinterService
 {
-    public interface IPrinterService
-    {
-        string PerformeAction();
-    }
+    string PerformeAction();
 }

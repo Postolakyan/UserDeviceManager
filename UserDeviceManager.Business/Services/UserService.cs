@@ -1,11 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using UserDeviceManager.Business.Interfaces;
-using UserDeviceManager.Business.Models;
-using UserDeviceManager.Data.Interfaces;
-using UserDeviceManager.Data.Models;
-
-namespace UserDeviceManager.Business.Services;
+﻿namespace UserDeviceManager.Business.Services;
 
 public class UserService(IUnitOfWork unit, IMapper mapper) : IUserService
 {

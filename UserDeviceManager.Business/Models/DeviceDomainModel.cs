@@ -1,5 +1,4 @@
 ﻿using UserDeviceManager.Data.Enum;
-using UserDeviceManager.Data.Models;
 
 namespace UserDeviceManager.Business.Models;
 

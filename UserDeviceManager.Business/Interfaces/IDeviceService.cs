@@ -1,6 +1,4 @@
-﻿using UserDeviceManager.Business.Models;
-
-namespace UserDeviceManager.Business.Interfaces;
+﻿namespace UserDeviceManager.Business.Interfaces;
 
 public interface IDeviceService
 {

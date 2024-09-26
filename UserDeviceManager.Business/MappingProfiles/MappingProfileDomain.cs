@@ -1,8 +1,4 @@
-﻿using AutoMapper;
-using UserDeviceManager.Business.Models;
-using UserDeviceManager.Data.Models;
-
-namespace UserDeviceManager.Business.MappingProfiles;
+﻿namespace UserDeviceManager.Business.MappingProfiles;
 
 public class MappingProfileDomain : Profile
 {

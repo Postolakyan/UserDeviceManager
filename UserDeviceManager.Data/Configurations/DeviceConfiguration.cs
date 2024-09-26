@@ -9,6 +9,5 @@ public class DeviceConfiguration : IEntityTypeConfiguration<Device>
         builder.Property(x => x.Name).HasMaxLength(25).IsRequired();
         builder.Property(x => x.Model).HasMaxLength(25).IsRequired();
         builder.Property(x => x.SerialNumber).HasMaxLength(25).IsRequired();
-
     }
 }

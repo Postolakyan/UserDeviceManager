@@ -1,10 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using UserDeviceManager.Business.Interfaces;
-using UserDeviceManager.Business.Models;
-using UserDeviceManager.Data.Interfaces;
-using UserDeviceManager.Data.Models;
-using IDeviceAction = UserDeviceManager.Business.Interfaces.IDeviceAction;
+﻿using IDeviceAction = UserDeviceManager.Business.Interfaces.IDeviceAction;
 
 namespace UserDeviceManager.Business.Services;
 

@@ -1,5 +1,4 @@
 ﻿using UserDeviceManager.Data.Interfaces;
-using UserDeviceManager.Data.Repository;
 
 namespace UserDeviceManager.Data.UnitOfWork;
 
@@ -8,7 +7,6 @@ public class UnitOfWork(DeviceManagerDbContext context) : IUnitOfWork
     private readonly DeviceManagerDbContext context = context;
 
     private IUserRepository userRepository;
-
     public IUserRepository UserRepository
     {
         get
@@ -22,7 +20,6 @@ public class UnitOfWork(DeviceManagerDbContext context) : IUnitOfWork
         }
         set => userRepository = value;
     }
-
 
     private IDeviceRepository deviceRepository;
     public IDeviceRepository DeviceRepository
@@ -38,7 +35,6 @@ public class UnitOfWork(DeviceManagerDbContext context) : IUnitOfWork
         }
         set => deviceRepository = value;
     }
-
     public async Task Save(CancellationToken token)
     {
         await context.SaveChangesAsync(token);

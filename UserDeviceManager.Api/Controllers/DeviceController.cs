@@ -79,8 +79,6 @@ public class DeviceController(IDeviceService deviceService, IMapper mapper) : Co
         return NotFound();
     }
     #endregion CRUD
-
-
     [HttpPost]
     public async Task<IActionResult> PerformeAction(int id, CancellationToken token)
     {

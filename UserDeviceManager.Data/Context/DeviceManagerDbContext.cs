@@ -13,7 +13,6 @@ public class DeviceManagerDbContext : DbContext
     {
 
     }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new UserConfiguration());

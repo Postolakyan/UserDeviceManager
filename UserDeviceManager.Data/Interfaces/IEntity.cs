@@ -1,7 +1,6 @@
-﻿namespace UserDeviceManager.Data.IRepository
+﻿namespace UserDeviceManager.Data.IRepository;
+
+public interface IEntity
 {
-    public interface IEntity
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }

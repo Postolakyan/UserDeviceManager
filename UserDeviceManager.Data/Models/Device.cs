@@ -12,5 +12,4 @@ public class Device : IEntity
     public string Description { get; set; }
     public string SerialNumber { get; set; }
     public DeviceType DeviceType { get; set; }
-   
 }

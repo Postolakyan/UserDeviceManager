@@ -18,12 +18,10 @@ public class Repository<T>(DeviceManagerDbContext context) : IRepository<T> wher
     //{
     //    return await dbSet.AsNoTracking().ToListAsync(token);
     //}
-   
     public IQueryable<T> GetAllAsync(CancellationToken token)
     {
         return dbSet.AsNoTracking();
     }
-
     public void Update(T entity)
     {
         dbSet.Update(entity);
