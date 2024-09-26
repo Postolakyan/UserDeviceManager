@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.CompilerServices;
 using UserDeviceManager.Api.Models;
 using UserDeviceManager.Business.Interfaces;
 using UserDeviceManager.Business.Models;
-using UserDeviceManager.Business.Services;
 
 namespace UserDeviceManager.Api.Controllers;
 
