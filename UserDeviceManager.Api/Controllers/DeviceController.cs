@@ -62,7 +62,16 @@ public class DeviceController(IDeviceService deviceService, IMapper mapper) : Co
 
         if (device is not null)
         {
-            DeviceDomainModel model = mapper.Map<DeviceDomainModel>(device);
+            DeviceDomainModel model = new()
+            {
+                Id = device.Id,
+                Name = updateDevice.Name,
+                Description = updateDevice.Description,
+                DeviceType = updateDevice.DeviceType,
+                Model = updateDevice.Model,
+                SerialNumber = updateDevice.SerialNumber,
+                UserId = updateDevice.UserId,
+            };
             await deviceservice.UpdateAsync(model, token);
             return Ok();
         }

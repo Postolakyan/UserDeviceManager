@@ -58,7 +58,15 @@ public class UserController(IUserService userService, IMapper mapper) : Controll
 
         if (user is not null)
         {
-            UserDomainModel model = mapper.Map<UserDomainModel>(user);
+            UserDomainModel model = new()
+            {
+                Id = user.Id,
+                Devices = user.Devices,
+                LastName = updateUser.LastName,
+                FirstName = updateUser.FirstName,
+                DateOfBirth = updateUser.DateOfBirth,
+                Email = user.Email
+            };
             await userService.UpdateAsync(model, token);
             return Ok();
         }

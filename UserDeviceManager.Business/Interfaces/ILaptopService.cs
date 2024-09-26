@@ -1,4 +1,4 @@
-﻿namespace UserDeviceManager.Business.Services
+﻿namespace UserDeviceManager.Business.Interfaces
 {
     public interface ILaptopService
     {
