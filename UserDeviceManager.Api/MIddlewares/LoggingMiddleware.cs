@@ -2,13 +2,13 @@
 
 public class LoggingMiddleware
 {
-    public readonly RequestDelegate _next;
-    private readonly string logDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
-    private readonly string logFilePath;
+    private readonly RequestDelegate _next;
+    private readonly string logDirectory;
+
     public LoggingMiddleware(RequestDelegate next)
     {
         _next = next;
-        logFilePath = Path.Combine(logDirectory, "logs.txt");
+        logDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
 
         if (!Directory.Exists(logDirectory))
         {
@@ -18,6 +18,8 @@ public class LoggingMiddleware
 
     public async Task InvokeAsync(HttpContext context)
     {
+        var logFilePath = Path.Combine(logDirectory, $"{DateTime.UtcNow:yyyy-MM-dd_HH-mm-ss}.log");
+
         var originalBodyStream = context.Response.Body;
 
         try
@@ -25,20 +27,24 @@ public class LoggingMiddleware
             using (var responseBody = new MemoryStream())
             {
                 context.Response.Body = responseBody;
+
                 await _next(context);
 
                 var responseType = context.Response.ContentType;
                 var responseMessage = await FormatResponse(context.Response);
 
-                var logMessage = $"Return Type: {responseType}, Message: {responseMessage}";
+                var logMessage = $"Timestamp: {DateTime.UtcNow}\nReturn Type: {responseType}\nMessage: {responseMessage}";
 
-                File.AppendAllText(logFilePath, logMessage + Environment.NewLine);
+                await File.WriteAllTextAsync(logFilePath, logMessage);
+
                 await responseBody.CopyToAsync(originalBodyStream);
             }
         }
         catch (Exception ex)
         {
-            File.AppendAllText("logs.txt", "Error: " + ex.Message + Environment.NewLine);
+            var errorLogMessage = $"Error: {ex.Message}\nStack Trace: {ex.StackTrace}";
+            await File.AppendAllTextAsync(logFilePath, errorLogMessage + Environment.NewLine);
+
             throw;
         }
         finally
@@ -55,3 +61,4 @@ public class LoggingMiddleware
         return text;
     }
 }
+
