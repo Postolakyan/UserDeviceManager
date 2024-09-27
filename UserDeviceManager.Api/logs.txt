@@ -2,3 +2,4 @@ Error: Could not find a part of the path 'D:\UserDeviceManager\UserDeviceManager
 Error: A possible object cycle was detected. This can either be due to a cycle or if the object depth is larger than the maximum allowed depth of 32. Consider using ReferenceHandler.Preserve on JsonSerializerOptions to support cycles. Path: $.User.Devices.User.Devices.User.Devices.User.Devices.User.Devices.User.Devices.User.Devices.User.Devices.User.Devices.User.Devices.Id.
 Error: An error occurred while saving the entity changes. See the inner exception for details.
 Error: An error occurred while saving the entity changes. See the inner exception for details.
+Error: An error occurred while saving the entity changes. See the inner exception for details.

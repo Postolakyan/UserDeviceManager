@@ -11,13 +11,13 @@ public class UserController(IUserService userService, IMapper mapper) : Controll
     [HttpPost]
     public async Task<IActionResult> Add([FromBody] UserCreateDto addUser, CancellationToken token)
     {
-        if (addUser is not null)
+        if (ModelState.IsValid)
         {
             UserDomainModel businessAddUser = mapper.Map<UserDomainModel>(addUser);
             await userService.AddAsync(businessAddUser, token);
             return Ok();
         }
-        return BadRequest();
+        return BadRequest(ModelState);
     }
 
     [HttpGet]

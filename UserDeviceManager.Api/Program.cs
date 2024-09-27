@@ -1,5 +1,9 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using UserDeviceManager.Api.MIddlewares;
+using UserDeviceManager.Api.Validation;
 using UserDeviceManager.Business.MappingProfiles;
 using UserDeviceManager.Business.Services;
 using UserDeviceManager.Data.Context;
@@ -26,6 +30,8 @@ builder.Services.AddScoped<IPrinterService, PrinterService>();
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(MappingProfileDomain).Assembly);
 
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<UserCreateDtoValidator>();
 
 builder.Services.AddSwaggerGen();
 

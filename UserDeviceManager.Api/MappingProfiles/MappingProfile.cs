@@ -5,8 +5,8 @@ public class MappingProfile : Profile
     public MappingProfile()
     {
         CreateMap<UserCreateDto, UserDomainModel>().ReverseMap();
-        CreateMap<UserUpdateDto, UserDomainModel>().ReverseMap().
-            ForMember(dest => dest.Email, opt => opt.Ignore());
+        CreateMap<UserUpdateDto, UserDomainModel>().ReverseMap();
+         //   ForMember(dest => dest.Email, opt => opt.Ignore());
 
 
         CreateMap<UserResponseDto, UserDomainModel>()
