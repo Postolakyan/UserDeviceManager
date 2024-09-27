@@ -6,7 +6,6 @@ public class MappingProfile : Profile
     {
         CreateMap<UserCreateDto, UserDomainModel>().ReverseMap();
         CreateMap<UserUpdateDto, UserDomainModel>().ReverseMap();
-         //   ForMember(dest => dest.Email, opt => opt.Ignore());
 
 
         CreateMap<UserResponseDto, UserDomainModel>()
